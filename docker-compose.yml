@@ -24,4 +24,4 @@ services:
         limits:
           cpus: 0.5
           memory: 200M
-    command: "npm run test"
+    command: ["npm","run","test"]
