@@ -8,3 +8,20 @@ services:
     - 5000:3000
     volumes:
     - .:/project/app
+    deploy:
+      resources:
+        limits:
+          cpus: 1.0
+          memory: 500M
+  react-app-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+    - .:/project/app
+    deploy:
+      resources:
+        limits:
+          cpus: 0.5
+          memory: 200M
+    command: "npm run test"
