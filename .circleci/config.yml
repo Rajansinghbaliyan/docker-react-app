@@ -47,15 +47,14 @@ jobs:
     steps:
       - checkout
       - run:
-          - run:
-              name: Run tests
-              command: |
-                docker run -e CI=true app npm run test
+          name: Run tests
+          command: |
+            docker run -e CI=true app npm run test
 
 workflows:
   stage_test:
     jobs:
-      - stage
+      - build
       - test:
           requires:
-            - stage
+            - build
