@@ -43,4 +43,4 @@ jobs:
       - run:
           name: Run tests
           command: |
-            docker run --rm -it app npm run test
+            docker run -e CI=true app npm run test
