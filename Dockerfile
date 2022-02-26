@@ -10,8 +10,9 @@ RUN npm run build
 FROM nginx:stable-alpine
 WORKDIR /usr/share/nginx
 
-RUN addgroup --system reactuser && adduser reactuser -S -s /bin/false -G reactuser reactuser
-RUN chown -R reactuser:reactuser /usr/share/nginx
-USER reactuser
+#RUN addgroup --system reactuser && adduser reactuser -S -s /bin/false -G reactuser reactuser
+#RUN chown -R reactuser:reactuser /usr/share/nginx
+#RUN chown -R reactuser:reactuser /var/
+#USER reactuser
 
 COPY --from=build /app/build/ ./html
