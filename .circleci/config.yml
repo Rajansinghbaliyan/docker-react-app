@@ -126,7 +126,7 @@ jobs:
       - run:
           name: Build Image for docker push
           command:  |
-            docker build --cache-from=app rbaliyan/docker_react .
+            docker build --cache-from=app -t rbaliyan/docker_react .
       - run:
           name: Push Image
           command:  |
