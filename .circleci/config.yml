@@ -55,7 +55,7 @@ jobs:
 workflows:
   stage_test:
     jobs:
-      -stage
-      -test:
-        requires:
-          - stage
+      - stage
+      - test:
+          requires:
+            - stage
