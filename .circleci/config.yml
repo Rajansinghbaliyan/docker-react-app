@@ -144,6 +144,6 @@ workflows:
           requires:
             - test
       - push_image:
-          - context: docker-auth
-          - requires:
-              - build_production
+          context: docker-auth
+          requires:
+            - build_production
