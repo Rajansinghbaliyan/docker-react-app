@@ -7,3 +7,9 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/Hi there its form the docker, its working now/);
   expect(linkElement).toBeInTheDOM;
 });
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Hi there its form the docker, its working now/);
+  expect(linkElement).toBeInTheDOM;
+});
