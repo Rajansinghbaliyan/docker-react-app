@@ -40,7 +40,22 @@ jobs:
           key: v1-{{ .Branch }}-{{ epoch }}
           paths:
             - /caches/app.tar
+  test:
+    working_directory: /app
+    docker:
+      - image: docker:17.05.0-ce-git
+    steps:
+      - checkout
       - run:
-          name: Run tests
-          command: |
-            docker run -e CI=true app npm run test
+          - run:
+              name: Run tests
+              command: |
+                docker run -e CI=true app npm run test
+
+workflows:
+  stage_test:
+    jobs:
+      -stage
+      -test:
+        requires:
+          - stage
